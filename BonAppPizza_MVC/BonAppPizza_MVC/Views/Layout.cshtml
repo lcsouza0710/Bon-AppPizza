@@ -3,12 +3,11 @@
 }
 
 <!DOCTYPE html>
-
-<html>
+<html lang="pt-br">
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>BonApp Pizza - @ViewBag.Title</title>
-    <link href="@Url.Content("~/Content/Bootstrap/bootstrap.min.css")"
+    <title>Bon'App Pizza - @ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/bootstrap.min.css")"
           rel="stylesheet" />
     <style>
         body {
@@ -20,13 +19,13 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Cade meu medico?</a>
+                <a class="navbar-brand" href="#">Bon'App Pizza</a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
                     <li id="menuPaises">
-                        @Html.ActionLink("Estados", "Index", "Estados")
+                        @Html.ActionLink("Países", "Index", "Paises")
                     </li>
                 </ul>
             </div>
@@ -35,11 +34,10 @@
     <div class="container">
         @RenderBody()
     </div>
-    <script src="@Url.Content("~/Scripts/jquery-2.0.2.min.js")">
+    <script src="@Url.Content("~/Scripts/jquery-3.3.1.min.js")">
     </script>
     <script src="@Url.Content("~/Scripts/bootstrap.min.js")">
     </script>
     @RenderSection("script", required: false);
 </body>
 </html>
-
