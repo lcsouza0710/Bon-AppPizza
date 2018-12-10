@@ -1,0 +1,49 @@
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Bon'App Pizza - @ViewBag.Title</title>
+	<link href="@Url.Content("~/Content/bootstrap.min.cs")"
+	rel="stylesheet" />
+	<style>
+		body {
+			padding-top: 60px;
+		}
+	</style>
+</head>
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Bon'App Pizza</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Página inicial</a></li>
+					<li id="menuEstados">
+						@Html.ActionLink("Estados", "Index", "Estados")
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		@RenderBody()
+	</div>
+	
+	<script src="@Url.Content("~/Scripts/jquery-3.1.1.min.js ")">
+	</script>
+	
+	<script src="@Url.Content("~/Scripts/bootstrap.min.js ")">
+	</script>
+	@RenderSection("script", required: false);
+	
+</body>
+</html>
+	

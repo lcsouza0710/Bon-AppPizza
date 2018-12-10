@@ -1,0 +1,8 @@
+Vermelho padrao
+RGB: 220, 58, 58
+Hexadecimal: #DC3A3A
+
+Verde padrao
+RGB: 0, 120, 80
+Hexadecimal: #007850
+
