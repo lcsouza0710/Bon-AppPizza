@@ -1,0 +1,5 @@
+- 06/02/2019
+	- Usar o binding context
+	- Usar cores de forma dinâmica
+	- Criar função para o botão
+	- Adicionar icones

@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+             xmlns:local="clr-namespace:BonAppPizzaTeste;assembly=BonAppPizzaTeste"
+             x:Class="BonAppPizzaTeste.Estabel_Page"
+             BackgroundColor="White">
+
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label TextColor="White"
+                   Text="{Binding NomeEstabel}"
+                   FontSize="16"/>
+            
+            <Label TextColor="White"
+                   Text="{Binding Cidade, StringFormat='Pizzaria - {0}'}"
+                   FontSize="12" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ScrollView>
+        <StackLayout
+            Padding="10, 20, 10, 10"
+            >
+
+
+            <StackLayout>
+                <Label
+                    x:Name="Titulo"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="{Binding Cidade}"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    TextColor="{Binding VermelhoPadrao}"
+                    VerticalOptions="Start"
+                    MaxLines="2"/>
+            </StackLayout>
+
+            <RelativeLayout
+                x:Name="FotosEstabelecimento"
+                Margin="0"
+                VerticalOptions="Start"
+                >
+
+                <BoxView 
+                    x:Name="ReservLogo" Color="{Binding VerdePadrao}"
+                    HeightRequest="96"
+                    WidthRequest="96">
+
+                </BoxView>
+
+                <BoxView
+                    x:Name="ReservFoto"
+                    Color="{Binding VermelhoPadrao}"
+                    RelativeLayout.XConstraint =" {ConstraintExpression Type=RelativeToView, 
+                             ElementName=ReservLogo, Property = Width, Constant = 8}"
+                    HeightRequest="96"
+                    WidthRequest="236">
+
+                </BoxView>
+
+                <Label
+                    Text="[Reservado para logotipo]" TextColor="White" Rotation="0"
+                    RelativeLayout.XConstraint =" {ConstraintExpression Type=RelativeToView,
+                       ElementName=ReservLogo, Property = Width, Factor = 0}"
+                    RelativeLayout.YConstraint =" {ConstraintExpression Type=RelativeToView,
+                       ElementName=ReservLogo, Property = Height, Factor = 0.33}"
+                    RelativeLayout.WidthConstraint =" {ConstraintExpression Type=RelativeToView,
+                       ElementName=ReservLogo, Property = Width, Factor = 1}"
+                    RelativeLayout.HeightConstraint =" {ConstraintExpression Type=RelativeToView,
+                       ElementName=ReservLogo, Property = Height, Factor = 1}"
+                    LineBreakMode="WordWrap"
+                    HorizontalTextAlignment="Center"/>
+
+                <Label 
+                    BackgroundColor="LimeGreen"
+                    Text="[Reservado para foto do estabelecimento]"
+                    TextColor="White"
+                    Rotation="0"
+                    RelativeLayout.XConstraint =" {ConstraintExpression Type=RelativeToView,
+                       ElementName=ReservFoto, Property = Width, Factor = 0.44}"
+                    RelativeLayout.YConstraint =" {ConstraintExpression Type=RelativeToView,
+                       ElementName=ReservFoto, Property = Height, Factor = 0}"
+                    RelativeLayout.WidthConstraint =" {ConstraintExpression Type=RelativeToView,
+                       ElementName=ReservFoto, Property = Width, Factor = 1}"
+                    RelativeLayout.HeightConstraint =" {ConstraintExpression Type=RelativeToView,
+                       ElementName=ReservFoto, Property = Height, Factor = 1}"
+                    LineBreakMode="WordWrap"
+                    HorizontalTextAlignment="Center"
+                    VerticalOptions="Center"/>
+            </RelativeLayout>
+
+            <Image Source="logo.png" />
+
+            <StackLayout>
+                <Label
+                    Text="Endereço"
+                    TextColor="{Binding VerdePadrao}"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    />
+                <Label
+                    Text="{Binding Endereco}"
+                    TextColor="{Binding VermelhoPadrao}"
+                    FontSize="16"
+                    MaxLines="4"
+                    Margin="0, 0, 0, 16"
+                    />
+            </StackLayout>
+
+            <StackLayout>
+                <Label
+                    Text="- Realiza Entregas na sua região"
+                    TextColor="{Binding VermelhoPadrao}"
+                    MaxLines="2"
+                    FontSize="14"/>
+            </StackLayout>
+
+            <StackLayout
+                Margin="0, 20, 0, 20"
+                >
+                <Button
+                    x:Name="cardapioButton"
+                    RelativeLayout.WidthConstraint =" {ConstraintExpression Type=RelativeToParent,
+                        Property=Width, Factor=0.8}"
+                    BackgroundColor="{Binding VermelhoPadrao}"
+                    Text="Ver Cardápio"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="OnCardapioButtonClicked"
+                />
+
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
