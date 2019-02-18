@@ -1,6 +1,0 @@
-{
-  "ConnectionStrings": {
-    "BonAppPizzaBD":  "server=localhost;userid=root;password=0710;database=bonapppizzabd"
-  }
-
-}

@@ -1,0 +1,36 @@
+<ContentView
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+<StackLayout>
+<!-- Place new controls here -->
+<Label 
+x:Name="nomeEstabel"
+Text="Bon'App Pizza Teste"
+TextColor="#DC3A3A"
+FontSize="20"
+LineBreakMode = "NoWrap"
+FontAttributes="Bold"
+VerticalOptions="Center"
+HorizontalOptions="FillAndExpand" 
+/>
+
+<StackLayout>
+<BoxView x:Name="logoEstabel">
+<BoxView.Color>
+#007850
+</BoxView.Color>
+<BoxView.CornerRadius>
+20
+</BoxView.CornerRadius>
+</BoxView>
+<BoxView
+x:Name="fachadaEstabel"
+Color="#007850"
+/>
+</StackLayout>
+
+
+</StackLayout>
+
+</ContentView>

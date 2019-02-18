@@ -7,5 +7,5 @@
 	data source=.\SQLEXPRESS;initial catalog=CadeMeuMedicoBD;
 	integrated security=True;
 	MultipleActiveResultSets=True;App=EntityFramework&quot;"
-	providerName="MySql.Data.EntityClient" />
+	providerName="MySql.Data.MySqlClient" />
 </connectionStrings>
