@@ -10,9 +10,10 @@ namespace BonAppPizzaTeste
             InitializeComponent();
         }
 
-        async void OnNavigateButtonClicked(object sender, EventArgs e)
+        public void OnNavigateButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Estabel_Page());
+            var paginaInicial = new PaginaInicialCliente();
+            Navigation.PushAsync(paginaInicial);
         }
     }
 }

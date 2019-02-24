@@ -19,7 +19,28 @@ namespace BonAppPizzaTeste
 
             BackgroundColor = coresPadrao.VermelhoPadrao;
 
-            var logo = new Image { Source = ImageSource.FromFile("logo.png") };
+            /*
+            Slider slider = new Slider
+            {
+                Maximum = 100,
+
+            };
+
+
+
+            Label valueSlider = new Label
+            {
+                TextColor = Color.White
+            };
+            */
+            
+
+            var logo = new Image
+            {
+                Source = ImageSource.FromFile("logo.png"),
+                WidthRequest = 128,
+                HeightRequest = 128
+            };
 
             Entry entryLogin = new Entry
             {
@@ -62,12 +83,39 @@ namespace BonAppPizzaTeste
 
             Label lblCriarConta = new Label
             {
-                Text = "Ainda não tem uma conta no Bon'App Pizza? Crie uma agora... É rápido!",
+                Text = "Ainda não tem uma conta no Bon'App Pizza? Crie uma agora... É super rápido!",
                 TextColor = Color.White,
                 LineBreakMode = LineBreakMode.WordWrap,
                 HorizontalTextAlignment = TextAlignment.Center
             };
 
+            Button btnFacebook = new Button
+            {
+                Text = "Entrar com o Facebook",
+                TextColor = Color.White,
+                BackgroundColor = Color.FromHex("#3B5998"),
+            };
+
+            Button btnGoogle = new Button
+            {
+                Text = "Entrar com o Google",
+                TextColor = Color.White,
+                BackgroundColor = Color.FromHex("#DD4B39")
+            };
+
+            /*
+
+            var larguraStack = Width;
+
+
+            Label lagrura = new Label
+            {
+                Text = larguraStack.ToString(),
+                TextColor = Color.White,
+                HorizontalOptions = LayoutOptions.Center
+            };
+
+            */
 
             StackLayout stackLayout = new StackLayout
             {
@@ -80,30 +128,38 @@ namespace BonAppPizzaTeste
                     entrySenha,
                     dicaSenha,
                     btnEntrar,
-                    lblCriarConta
+                    lblCriarConta,
+                    btnFacebook,
+                    btnGoogle
+                    
                 }
-
+ 
             };
 
-            RelativeLayout relativeLayout = new RelativeLayout();
+            /*
+            valueSlider.SetBinding(Label.TextProperty, new Binding("Value", source: slider));
+            */
 
-            relativeLayout.Children.Add(stackLayout, 
-                Constraint.RelativeToParent((parent) =>
-                    {
-                        return parent.X + parent.Width / 3;
-                    }
-                ),
-                Constraint.Constant(15),
-                Constraint.RelativeToParent((parent) =>
+            AbsoluteLayout absoluteLayout = new AbsoluteLayout
+            {
+                Children =
                 {
-                    return parent.Width / 2;
+                    stackLayout
                 }
-                ),
-                Constraint.Constant(200)
-                );
+            };
 
+            AbsoluteLayout.SetLayoutFlags(stackLayout, AbsoluteLayoutFlags.All);
+            AbsoluteLayout.SetLayoutBounds(stackLayout, new Rectangle(.5, .2, .6, 1));
 
-            this.Content = relativeLayout;
+            ScrollView scrollView = new ScrollView
+            {
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                Content = absoluteLayout,
+                Padding = new Thickness(0,40,0,20)
+            };
+
+            this.Content = scrollView;
+
 
             //InitializeComponent();
         }

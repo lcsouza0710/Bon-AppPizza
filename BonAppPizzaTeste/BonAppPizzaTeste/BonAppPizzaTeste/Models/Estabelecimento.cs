@@ -2,19 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BonAppPizzaTeste
+namespace BonAppPizzaTeste.Models
 {
     public class Estabelecimento
     {
-        public string NomeEstabel { get; set; } = "Bon'App Pizza Teste";
-        public string Endereco { get; set; } = "Rua Amador Bueno, 389/491";
-        public string Bairro { get; set; } = "Santo Amaro";
-        public string Cidade { get; set; } = "São Paulo";
-        public string Estado { get; set; } = "SP";
-
-        public Estabelecimento()
-        {
-
-        }
+        public long CodPizzaria { get; set; }
+        public string NomeDivulgacao { get; set; }
+        public string RazaoSocial { get; set; }
+        public string CNPJ { get; set; }
+        public string Proprietario { get; set; }
+        public virtual Endereco Endereco { get; set; }
     }
 }
